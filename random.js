@@ -4,17 +4,17 @@ function randomPrice(seed, volatility) {
     if (change_percent > volatility) {
         change_percent -= (2 * volatility);
     }
-    change_amount = seed * change_percent;
+    var change_amount = seed * change_percent;
     return seed + change_amount;
 }
 
 function generateData(){
     var today = new Date(),
     // before = today.add(Date.DAY, -200),
-    before = Ext.Date.add(today, Ext.Date.DAY, -200)
+    before = Ext.Date.add(today, Ext.Date.DAY, -200),
     data = [{
         date: before,
-        open: 10000,
+        open: 10000
     }],
     i, currentDate = before;
 
